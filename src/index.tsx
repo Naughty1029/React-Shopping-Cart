@@ -8,7 +8,7 @@ import { theme } from 'commons/style/theme'
 import GlobalStyle from 'commons/style/global-style'
 
 /* Context Providers */
-import { ProductsProvider } from 'contexts/products-context/ProductsContext'
+import { ProductsProvider } from 'contexts/products-context'
 
 const root = document.getElementById('root')!
 const container = ReactDOMClient.createRoot(root)
