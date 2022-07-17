@@ -1,5 +1,14 @@
+import * as S from './style'
+
 const Loader = () => {
-  return <div>Loader</div>
+  return (
+    <S.Container>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </S.Container>
+  )
 }
 
 export default Loader
