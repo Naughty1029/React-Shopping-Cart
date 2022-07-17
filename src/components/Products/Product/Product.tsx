@@ -1,3 +1,4 @@
+import formatPrice from 'utils/formatPrice'
 import { IProduct } from 'models'
 
 import * as S from './style'
@@ -17,6 +18,9 @@ const Product = ({ product }: IProps) => {
     isFreeShipping,
   } = product
 
+  const formattedPrice = formatPrice(price, currencyId)
+  console.log(formattedPrice)
+
   return (
     <S.Container sku={sku} tabIndex={1}>
       <S.Image alt={title}></S.Image>
@@ -24,8 +28,8 @@ const Product = ({ product }: IProps) => {
       <S.Price>
         <S.Val>
           <small>{currencyFormat}</small>
-          <b></b>
-          <span></span>
+          <b>{formattedPrice.substring(0, formattedPrice.length - 3)}</b>
+          <span>{formattedPrice.substring(formattedPrice.length - 3)}</span>
         </S.Val>
       </S.Price>
       <S.BuyButton>Add to cart</S.BuyButton>
