@@ -73,3 +73,37 @@ export const Container = styled.div<IContainer>`
     }
   }
 `
+
+export const Title = styled.p`
+  position: relative;
+  padding: 0 20px;
+  height: 45px;
+  &::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+  }
+`
+
+export const Price = styled.div`
+  height: 60px;
+  .val {
+    b {
+      font-size: 1.5em;
+      margin-left: 5px;
+    }
+  }
+`
+
+export const Val = styled.p`
+  margin: 0;
+  b {
+    font-size: 1.5em;
+    margin-left: 5px;
+  }
+`
