@@ -11,7 +11,7 @@ const Products = ({ products }: IProps) => {
   return (
     <S.Container>
       {products?.map((p) => (
-        <Product key={p.sku} />
+        <Product key={p.sku} product={p} />
       ))}
     </S.Container>
   )
