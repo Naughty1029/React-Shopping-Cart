@@ -26,7 +26,7 @@ function App() {
           <S.MainHeader>
             <p>{products.length} Products found</p>
           </S.MainHeader>
-          <Products />
+          <Products products={products} />
         </S.Main>
       </S.TwoColumnGrid>
     </S.Container>
