@@ -19,10 +19,25 @@ const Product = ({ product }: IProps) => {
   } = product
 
   const formattedPrice = formatPrice(price, currencyId)
-  console.log(formattedPrice)
+  let productInstallment //分割払いの情報を格納する
+
+  if (installments) {
+    const installmentPrice = price / installments
+
+    productInstallment = (
+      <S.Installment>
+        <span>or {installments} x</span>
+        <b>
+          {currencyFormat}
+          {formatPrice(installmentPrice, currencyId)}
+        </b>
+      </S.Installment>
+    )
+  }
 
   return (
     <S.Container sku={sku} tabIndex={1}>
+      {isFreeShipping && <S.Stopper>Free shipping</S.Stopper>}
       <S.Image alt={title}></S.Image>
       <S.Title>{title}</S.Title>
       <S.Price>
@@ -31,6 +46,7 @@ const Product = ({ product }: IProps) => {
           <b>{formattedPrice.substring(0, formattedPrice.length - 3)}</b>
           <span>{formattedPrice.substring(formattedPrice.length - 3)}</span>
         </S.Val>
+        {productInstallment}
       </S.Price>
       <S.BuyButton>Add to cart</S.BuyButton>
     </S.Container>

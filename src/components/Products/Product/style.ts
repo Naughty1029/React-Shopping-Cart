@@ -74,6 +74,18 @@ export const Container = styled.div<IContainer>`
   }
 `
 
+export const Stopper = styled.div`
+  position: absolute;
+  color: #ececec;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 0.6em;
+  background-color: ${({ theme }) => theme.colors.primary};
+  cursor: default;
+  z-index: 1;
+`
+
 export const Title = styled.p`
   position: relative;
   padding: 0 20px;
@@ -106,4 +118,9 @@ export const Val = styled.p`
     font-size: 1.5em;
     margin-left: 5px;
   }
+`
+
+export const Installment = styled.p`
+  margin: 0;
+  color: #9c9b9b;
 `
