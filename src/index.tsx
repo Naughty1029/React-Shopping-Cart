@@ -9,6 +9,7 @@ import GlobalStyle from 'commons/style/global-style'
 
 /* Context Providers */
 import { ProductsProvider } from 'contexts/products-context'
+import { CartProvider } from 'contexts/cart-context'
 
 const root = document.getElementById('root')!
 const container = ReactDOMClient.createRoot(root)
@@ -18,7 +19,9 @@ container.render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <ProductsProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </ProductsProvider>
     </ThemeProvider>
   </StrictMode>
