@@ -7,8 +7,7 @@ export const TwoColumnGrid = styled.main`
   grid-template-columns: 1fr;
   max-width: 1200px;
   margin: 50px auto auto;
-  @media only screen and (min-width: ${({ theme }) =>
-      theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: 1fr 4fr;
   }
 `
@@ -19,8 +18,7 @@ export const Side = styled.div`
   padding: 15px;
   box-sizing: border-box;
 
-  @media only screen and (min-width: ${({ theme }) =>
-      theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     align-content: baseline;
   }
 `
