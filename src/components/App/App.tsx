@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Products from 'components/Products'
 import Loader from 'components/Loader'
 import Filter from 'components/Filter'
+import Cart from 'components/Cart/Cart'
 
 import { useProducts } from 'contexts/products-context'
 
@@ -29,6 +30,7 @@ function App() {
           <Products products={products} />
         </S.Main>
       </S.TwoColumnGrid>
+      <Cart />
     </S.Container>
   )
 }
