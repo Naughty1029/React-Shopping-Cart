@@ -1,3 +1,4 @@
+import { useCart } from 'contexts/cart-context'
 import formatPrice from 'utils/formatPrice'
 import { IProduct } from 'models'
 
@@ -8,6 +9,7 @@ interface IProps {
 }
 
 const Product = ({ product }: IProps) => {
+  const { openCart, addProduct } = useCart()
   const {
     sku,
     title,
@@ -35,6 +37,11 @@ const Product = ({ product }: IProps) => {
     )
   }
 
+  const handleAddProduct = () => {
+    addProduct({ ...product, quantity: 1 })
+    openCart()
+  }
+
   return (
     <S.Container sku={sku} tabIndex={1}>
       {isFreeShipping && <S.Stopper>Free shipping</S.Stopper>}
@@ -48,7 +55,7 @@ const Product = ({ product }: IProps) => {
         </S.Val>
         {productInstallment}
       </S.Price>
-      <S.BuyButton>Add to cart</S.BuyButton>
+      <S.BuyButton onClick={handleAddProduct}>Add to cart</S.BuyButton>
     </S.Container>
   )
 }
